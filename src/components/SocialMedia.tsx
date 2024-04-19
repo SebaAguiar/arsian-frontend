@@ -1,31 +1,68 @@
-'use client';
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
-import React, { useState } from 'react';
-import NavBar from '../NavBar';
-import MiddleBar from '../MiddleBar';
-import { usePathname } from 'next/navigation';
+import Link from 'next/link';
+import React from 'react';
+import {
+  FaGithub,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTelegramPlane,
+  FaWhatsapp,
+} from 'react-icons/fa';
+import styles from '../styles/socialMedia.module.css';
+
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
-type SideBarProps = {
-  locale: string;
-};
+
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
+const socialOptions = [
+  {
+    name: 'linkedin',
+    href: 'https://www.linkedin.com/in/david-sebastian-aguiar/',
+    icon: <FaLinkedinIn />,
+  },
+  {
+    name: 'github',
+    href: 'https://github.com/SebaAguiar',
+    icon: <FaGithub />,
+  },
+  {
+    name: 'telegram',
+    href: 'https://t.me/SebaAguiar',
+    icon: <FaTelegramPlane />,
+  },
+  {
+    name: 'whatsapp',
+    href: `https://api.whatsapp.com/send?phone=+543442536874&text=Hola,%20me%20gustaría%20contactarte`,
+    icon: <FaWhatsapp />,
+  },
+  {
+    name: 'instagram',
+    href: 'https://www.instagram.com/sebaaguiar._/',
+    icon: <FaInstagram />,
+  },
+];
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
-const SideBar: React.FC<SideBarProps> = ({ locale }) => {
-  const path = usePathname();
-
+const SocialMedia = () => {
   return (
-    <div className='h-full w-full lg:w-1/3 flex flex-row'>
-      <NavBar locale={locale} path={path} />
-      <MiddleBar />
+    <div className='flex flex-row justify-around mt-4'>
+      {socialOptions.map((opt, index) => (
+        <Link
+          id={styles.social}
+          className='text-2xl md:text-3xl text-white duration-300'
+          key={index}
+          href={opt.href}
+        >
+          {opt.icon}
+        </Link>
+      ))}
     </div>
   );
 };
@@ -34,4 +71,4 @@ const SideBar: React.FC<SideBarProps> = ({ locale }) => {
  * * EXPORTS
  ****************************************************************************************************************************************************/
 
-export default SideBar;
+export default SocialMedia;

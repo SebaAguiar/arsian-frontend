@@ -3,7 +3,8 @@
  ****************************************************************************************************************************************************/
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import '../ui/globals.css';
+import '@/styles/globals.css';
+import SideBar from '@/components/containers/SideBar';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -27,7 +28,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({
 }) => {
   return (
     <html lang={locale}>
-      <body className='h-screen w-screen'>{children}</body>
+      <body className='h-screen w-screen'>
+        <SideBar locale={locale} />
+        {children}
+      </body>
     </html>
   );
 };

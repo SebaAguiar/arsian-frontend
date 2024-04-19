@@ -1,7 +1,7 @@
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
-import Image from 'next/image';
+import { Pathnames } from 'next-intl/navigation';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -14,13 +14,27 @@ import Image from 'next/image';
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
-const Home = () => {
-  return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'></main>
-  );
-};
 
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export default Home;
+export const port = process.env.PORT || 3000;
+export const host = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : `http://localhost:${port}`;
+
+export const defaultLocale = 'en' as const;
+export const locales = ['en', 'es'] as const;
+
+export const pathnames = {
+  '/': '/',
+  '/pathnames': {
+    en: '/pathnames',
+    es: '/directorios',
+  },
+} satisfies Pathnames<typeof locales>;
+
+// Use the default: `always`
+export const localePrefix = 'always';
+
+export type AppPathnames = keyof typeof pathnames;
