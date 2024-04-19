@@ -10,8 +10,8 @@ import {
   HiOutlineUser,
   HiOutlineViewColumns,
 } from 'react-icons/hi2';
-import { usePathname } from 'next/navigation';
 import styles from '../styles/navbar.module.css';
+import { getPath } from '@/utils/functions';
 
 /************************s****************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -37,17 +37,17 @@ const NavBar: React.FC<NavBarProps> = ({ locale, path }) => {
     },
     {
       name: 'About',
-      href: `${locale}/about`,
+      href: `/${locale}/about`,
       icon: <HiOutlineUser />,
     },
     {
-      name: 'resume',
-      href: `${locale}/resume`,
+      name: 'Resume',
+      href: `/${locale}/resume`,
       icon: <HiOutlineDocumentText />,
     },
     {
-      name: 'contact',
-      href: `${locale}/contact`,
+      name: 'Contact',
+      href: `/${locale}/contact`,
       icon: <HiOutlineEnvelope />,
     },
     // {
@@ -56,23 +56,26 @@ const NavBar: React.FC<NavBarProps> = ({ locale, path }) => {
     //   icon: <HiOutlineViewColumns />,
     // },
   ];
-  console.log(locale);
-  console.log(path);
+
   return (
     <div className='h-full w-2/12 border-r bg-black border-side-gray'>
       <ul className='h-60 w-full'>
         {options.map((o, index) => {
-          console.log(o.href);
+          const newPath = getPath(path, locale);
           return (
             <Link
-              // onClick={() => dispatch(toggleSide())}
-              key={index}
+              // onClick={() => changePath(path, o.href)}
               href={o.href}
+              key={index}
               className='w-max h-max'
             >
               <li
-                id={path === o.href ? styles.navActive : ''}
-                className={`w-full h-1/4 flex justify-center items-center text-4xl border-b border-b-side-gray duration-300 ${path === o.href ? 'text-green' : 'text-white'}`}
+                id={
+                  newPath === `/${o.name.toLocaleLowerCase()}`
+                    ? styles.navActive
+                    : ''
+                }
+                className={`w-full h-1/4 flex justify-center items-center text-4xl border-b border-b-side-gray duration-300`}
               >
                 {o.icon}
               </li>
