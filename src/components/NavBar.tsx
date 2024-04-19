@@ -12,6 +12,7 @@ import {
 } from 'react-icons/hi2';
 import styles from '../styles/navbar.module.css';
 import { getPath } from '@/utils/functions';
+import { useSavedState } from '@/zustand/store';
 
 /************************s****************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -29,6 +30,7 @@ type NavBarProps = {
  ****************************************************************************************************************************************************/
 
 const NavBar: React.FC<NavBarProps> = ({ locale, path }) => {
+  const { toggleSide } = useSavedState();
   const options = [
     {
       name: 'Home',
@@ -64,10 +66,10 @@ const NavBar: React.FC<NavBarProps> = ({ locale, path }) => {
           const newPath = getPath(path, locale);
           return (
             <Link
-              // onClick={() => changePath(path, o.href)}
               href={o.href}
               key={index}
               className='w-max h-max'
+              onClick={() => toggleSide()}
             >
               <li
                 id={
