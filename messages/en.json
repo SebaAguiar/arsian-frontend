@@ -1,5 +1,8 @@
 {
   "Landing": {
     "greeting": "Hello"
+  },
+  "SideBar": {
+    "downloadButton": "Download CV"
   }
 }

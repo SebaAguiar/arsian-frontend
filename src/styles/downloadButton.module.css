@@ -1,0 +1,9 @@
+.donwloadButton:hover {
+  border-color: #55b481;
+  text-shadow: 1px 1px 2px #55b481;
+}
+#download:hover {
+  box-shadow: 1px 1px 20px #55b481;
+  transition: ease-in-out;
+  transition-duration: 600ms;
+}

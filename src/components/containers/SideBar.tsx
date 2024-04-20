@@ -1,4 +1,3 @@
-'use client';
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
@@ -6,6 +5,7 @@ import React, { useState } from 'react';
 import NavBar from '../NavBar';
 import MiddleBar from '../MiddleBar';
 import { usePathname } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
@@ -20,12 +20,11 @@ type SideBarProps = {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 const SideBar: React.FC<SideBarProps> = ({ locale }) => {
-  const path = usePathname();
-
+  const t = useTranslations('SideBar');
   return (
     <div className='h-full w-full lg:w-1/3 flex flex-row'>
-      <NavBar locale={locale} path={path} />
-      <MiddleBar />
+      <NavBar locale={locale} />
+      <MiddleBar t={t} />
     </div>
   );
 };
