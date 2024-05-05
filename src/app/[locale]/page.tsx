@@ -3,6 +3,7 @@
  ****************************************************************************************************************************************************/
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import LandingContainer from '@/components/containers/LandingContainer';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -18,9 +19,9 @@ import { useTranslations } from 'next-intl';
 const LandingPage = () => {
   const t = useTranslations('Landing');
   return (
-    <div>
-      <h1>{t('greeting')}</h1>
-    </div>
+    <>
+      <LandingContainer t={t} />
+    </>
   );
 };
 

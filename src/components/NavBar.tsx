@@ -4,16 +4,10 @@
  ****************************************************************************************************************************************************/
 import Link from 'next/link';
 import React from 'react';
-import {
-  HiOutlineDocumentText,
-  HiOutlineEnvelope,
-  HiOutlineHome,
-  HiOutlineUser,
-  HiOutlineViewColumns,
-} from 'react-icons/hi2';
+import { LuHome, LuUser, LuFileText, LuMail } from 'react-icons/lu';
 import styles from '../styles/navbar.module.css';
 import { getPath } from '@/utils/functions';
-import { useSavedState } from '@/zustand/store';
+import { useStore } from '@/zustand/store';
 import { usePathname } from 'next/navigation';
 
 /************************s****************************************************************************************************************************
@@ -32,62 +26,61 @@ type NavBarProps = {
 
 const NavBar: React.FC<NavBarProps> = ({ locale }) => {
   const path = usePathname();
-  const { toggleSide } = useSavedState();
-  const options = [
+  const { toggleSide } = useStore();
+  const pages = [
     {
-      name: 'Home',
-      href: `/${locale}`,
-      icon: <HiOutlineHome />,
+      name: {
+        es: 'Inicio',
+        en: 'Home',
+      },
+      path: `/${locale}/`,
+      icon: <LuHome />,
     },
     {
-      name: 'About',
-      href: `/${locale}/about`,
-      icon: <HiOutlineUser />,
+      name: {
+        es: 'Sobre Mi',
+        en: 'About Me',
+      },
+      path: `/${locale}/about`,
+      icon: <LuUser />,
     },
     {
-      name: 'Resume',
-      href: `/${locale}/resume`,
-      icon: <HiOutlineDocumentText />,
+      name: {
+        es: 'Currículum',
+        en: 'Resume',
+      },
+      path: `/${locale}/resume`,
+      icon: <LuFileText />,
     },
     {
-      name: 'Contact',
-      href: `/${locale}/contact`,
-      icon: <HiOutlineEnvelope />,
+      name: {
+        es: 'Contacto',
+        en: 'Contact',
+      },
+      path: `/${locale}/contact`,
+      icon: <LuMail />,
     },
-    // {
-    //   name: 'clients',
-    //   href: '/auth/signin',
-    //   icon: <HiOutlineViewColumns />,
-    // },
   ];
 
   return (
-    <div className='h-full w-2/12 border-r bg-black border-side-gray'>
-      <ul className='h-60 w-full'>
-        {options.map((o, index) => {
-          const newPath = getPath(path, locale);
-          return (
-            <Link
-              href={o.href}
-              key={index}
-              className='w-max h-max'
-              onClick={() => toggleSide()}
-            >
-              <li
-                id={
-                  newPath === `/${o.name.toLocaleLowerCase()}`
-                    ? styles.navActive
-                    : ''
-                }
-                className={`w-full h-1/4 flex justify-center items-center text-4xl border-b border-b-side-gray duration-300`}
+    <>
+      <nav className='h-full w-2/12 border-r border-side-gray bg-black'>
+        <div className='h-60 w-full'>
+          {pages.map((page) => (
+            <>
+              <a
+                id={`/${locale}${path}` === page.path ? styles.navActive : ''}
+                className={`flex h-1/4 w-full items-center justify-center border-b border-b-side-gray text-4xl duration-300`}
+                href={page.path}
+                onClick={toggleSide}
               >
-                {o.icon}
-              </li>
-            </Link>
-          );
-        })}
-      </ul>
-    </div>
+                {page.icon}
+              </a>
+            </>
+          ))}
+        </div>
+      </nav>
+    </>
   );
 };
 

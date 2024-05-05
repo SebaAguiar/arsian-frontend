@@ -19,6 +19,16 @@
  ****************************************************************************************************************************************************/
 export const getPath = (path: string, lang: string): string => {
   const [, newPath] = path.split(`/${lang}`);
-  console.log('NEW: ', newPath);
   return !newPath.length || !newPath ? '/home' : newPath;
+};
+
+export const dateFormater = (date: string, lang: string, options: object) => {
+  const locales = lang === 'en' ? 'en-US' : 'es-ES';
+  const newDate = new Date(date);
+  const birth = newDate.toLocaleDateString(locales, options);
+  return birth;
+};
+
+export const capitalizeFirstLetter = (word: string) => {
+  return word.charAt(0).toUpperCase() + word.slice(1);
 };

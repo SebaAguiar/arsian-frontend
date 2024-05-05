@@ -4,13 +4,14 @@
 import React, { useState } from 'react';
 import NavBar from '../NavBar';
 import MiddleBar from '../MiddleBar';
-import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 type SideBarProps = {
   locale: string;
+  t: (text: string) => string;
 };
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -19,13 +20,14 @@ type SideBarProps = {
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
-const SideBar: React.FC<SideBarProps> = ({ locale }) => {
-  const t = useTranslations('SideBar');
+const SideBar: React.FC<SideBarProps> = ({ locale, t }) => {
   return (
-    <div className='h-full w-full lg:w-1/3 flex flex-row'>
+    <aside
+      className={`fixed top-0 z-40 w-full h-full flex flex-row flex-nowrap border-r border-dark-white md:w-2/4 lg:w-full lg:col-start-1 lg:col-end-4 lg:row-start-1 lg:row-end-6 transition-transform lg:static lg:translate-x-0 duration-500 ease-in-out`}
+    >
       <NavBar locale={locale} />
       <MiddleBar t={t} />
-    </div>
+    </aside>
   );
 };
 

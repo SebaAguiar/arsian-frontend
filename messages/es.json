@@ -1,8 +1,13 @@
 {
   "Landing": {
-    "greeting": "Hello"
+    "whatIDo": "Desarrollador Backend"
+  },
+  "About": {
+    "page.title": "About Me",
+    "page.about": ""
   },
   "SideBar": {
-    "downloadButton": "Descargar CV"
+    "downloadButton": "Descargar CV",
+    "work": "Desarrollador Backend"
   }
 }

@@ -38,7 +38,7 @@ const MiddleBar: React.FC<IMiddleBarProps> = ({ t }) => {
           Sebastian Aguiar
         </h1>
         <h2 className='font-semibold text-lg text-center text-gray'>
-          Backend Developer
+          {t('work')}
         </h2>
         <div className='w-10/12 md:w-full'>
           <SocialMedia />
