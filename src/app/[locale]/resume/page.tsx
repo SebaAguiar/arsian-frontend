@@ -18,7 +18,7 @@ import React from 'react';
 const ResumePage = () => {
   return (
     <>
-      <ResumeContainer />s
+      <ResumeContainer />
     </>
   );
 };
