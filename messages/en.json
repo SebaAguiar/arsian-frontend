@@ -1,13 +1,22 @@
 {
-  "Landing": {
-    "whatIDo": "Backend Developer"
-  },
-  "About": {
-    "page.title": "About Me",
-    "page.about": ""
-  },
-  "SideBar": {
-    "downloadButton": "Descargar CV",
-    "work": "Backend Developer"
+  "Portfolio": {
+    "lang": "en",
+    "about": {
+      "title": "About Me",
+      "data": "I am passionate about music and, by chance, ended up studying web programming. Today, I work in application development, handling both backend and frontend aspects. I possess strong adaptability and quick learning skills. I consider myself a proactive individual, focused on teamwork, always ready to contribute value and creative solutions to the projects I engage in.",
+      "labels": {
+        "birthday": "Birthday",
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location"
+      },
+      "what-i-do": {
+        "title": "What I Do"
+      }
+    },
+    "side": {
+      "work": "Backend Developer",
+      "downloadButton": "Download CV"
+    }
   }
 }

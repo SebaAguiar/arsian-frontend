@@ -1,14 +1,17 @@
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
-import AboutContainer from '@/components/containers/AboutContainer';
 import React from 'react';
-import { useTranslations } from 'next-intl';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
-
+interface IAboutInformationProps {
+  data: {
+    label: string;
+    content: string;
+  }[];
+}
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
@@ -16,11 +19,35 @@ import { useTranslations } from 'next-intl';
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
-const AboutPage = () => {
-  const t = useTranslations('Portfolio');
+const AboutInformation: React.FC<IAboutInformationProps> = ({ data }) => {
   return (
     <>
-      <AboutContainer t={t} />
+      <ul>
+        {data.map((render) => (
+          <>
+            <li className='text-sm md:mb-3'>
+              <strong>{render.label}: </strong>
+              {render.content}
+            </li>
+          </>
+        ))}
+        {/* <li className='text-sm md:mb-3'>
+          <strong>{t('about.labels.bithday')}: </strong>
+          {dateFormater('August 15, 1997', lang, options)}
+        </li>
+        <li className='text-sm md:mb-3'>
+          <strong>{t('about.labels.location')}: </strong>
+          Entre Rios, Argentina
+        </li>
+        <li className='text-sm md:mb-3'>
+          <strong>{t('about.labels.phone')}: </strong>
+          +54 3442536874
+        </li>
+        <li className='text-sm md:mb-3'>
+          <strong>{t('about.labels.email')}: </strong>
+          sebaaguiar08@gmail.com
+        </li> */}
+      </ul>
     </>
   );
 };
@@ -28,4 +55,5 @@ const AboutPage = () => {
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export default AboutPage;
+
+export default AboutInformation;

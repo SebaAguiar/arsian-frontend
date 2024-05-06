@@ -20,11 +20,13 @@ export const aboutMeData = {
         title: 'Desarrollo Web',
         description:
           'Como desarrollador web full-stack creo sitios web completos, desde el backend hasta el frontend. Tengo la capacidad de adaptarme a las necesidades de los usuarios y brindar soluciones web funcionales, atractivas y accesibles.',
+        component: 'LuMonitor',
       },
       {
         title: 'Desarrollo Backend',
         description:
           'Como desarrollador web backend, puedo crear API sólidas para conectar varios servicios y aplicaciones. Manejo la lógica, la seguridad y el rendimiento de los sitios web que desarrollo.',
+        component: 'LuTerminalSquare',
       },
     ],
   },
@@ -41,11 +43,13 @@ export const aboutMeData = {
         title: 'Web Development',
         description:
           'As a full-stack web developer I create complete websites, from their backend to their frontend. I have the ability to adapt to user needs and provide functional, attractive, and accessible web solutions.',
+        component: 'LuMonitor',
       },
       {
         title: 'Backend web Development',
         description:
           'As a backend web developer I can create robust APIs to connect various services and applications. I handle the logic, security, and performance of the websites I develop.',
+        component: 'LuTerminalSquare',
       },
     ],
   },

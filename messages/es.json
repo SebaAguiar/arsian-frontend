@@ -1,13 +1,22 @@
 {
-  "Landing": {
-    "whatIDo": "Desarrollador Backend"
-  },
-  "About": {
-    "page.title": "About Me",
-    "page.about": ""
-  },
-  "SideBar": {
-    "downloadButton": "Descargar CV",
-    "work": "Desarrollador Backend"
+  "Portfolio": {
+    "lang": "es",
+    "about": {
+      "title": "Sobre Mi",
+      "data": "Me apasiona la música y, por casualidad, terminé estudiando programación web. Hoy trabajo en el desarrollo de aplicaciones, manejando aspectos tanto de backend como de frontend. Poseo una gran adaptabilidad y habilidades de rápido aprendizaje. Me considero una persona proactiva, enfocada al trabajo en equipo, siempre dispuesta a aportar valor y soluciones creativas a los proyectos que emprendo.",
+      "labels": {
+        "birthday": "Fecha de Nacimiento",
+        "email": "Correo",
+        "phone": "Teléfono",
+        "location": "Ubicación"
+      },
+      "what-i-do": {
+        "title": "Que Hago"
+      }
+    },
+    "side": {
+      "work": "Desarrollador Backend",
+      "downloadButton": "Descargar CV"
+    }
   }
 }

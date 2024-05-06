@@ -6,15 +6,14 @@ import Link from 'next/link';
 import React from 'react';
 import { LuHome, LuUser, LuFileText, LuMail } from 'react-icons/lu';
 import styles from '../styles/navbar.module.css';
-import { getPath } from '@/utils/functions';
-import { useStore } from '@/zustand/store';
-import { usePathname } from 'next/navigation';
 
 /************************s****************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 type NavBarProps = {
   locale: string;
+  path: string;
+  toggleSide: () => void;
 };
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -24,9 +23,7 @@ type NavBarProps = {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 
-const NavBar: React.FC<NavBarProps> = ({ locale }) => {
-  const path = usePathname();
-  const { toggleSide } = useStore();
+const NavBar: React.FC<NavBarProps> = ({ locale, toggleSide, path }) => {
   const pages = [
     {
       name: {
@@ -66,9 +63,10 @@ const NavBar: React.FC<NavBarProps> = ({ locale }) => {
     <>
       <nav className='h-full w-2/12 border-r border-side-gray bg-black'>
         <div className='h-60 w-full'>
-          {pages.map((page) => (
+          {pages.map((page, index) => (
             <>
               <a
+                key={index}
                 id={`/${locale}${path}` === page.path ? styles.navActive : ''}
                 className={`flex h-1/4 w-full items-center justify-center border-b border-b-side-gray text-4xl duration-300`}
                 href={page.path}
