@@ -32,7 +32,7 @@ const AboutContainer: React.FC<IAboutContainerProps> = ({ t }) => {
   };
   const dataToRender = [
     {
-      label: t('about.lavels.birthday'),
+      label: t('about.labels.birthday'),
       content: dateFormater('August 15, 1997', lang, options),
     },
     { label: t('about.labels.location'), content: aboutMeData[lang].residence },
@@ -44,7 +44,7 @@ const AboutContainer: React.FC<IAboutContainerProps> = ({ t }) => {
       <main className='h-full w-full'>
         <h1 className='ml-3 mt-3 text-4xl font-bold'>{t('about.title')}</h1>
         <div className='flex w-full flex-col justify-center md:flex-row'>
-          <div className='m-4 ml-8 flex w-11/12 items-center justify-center md:w-8/12'>
+          <div className='p-2 md:m-4 md:ml-8 flex w-full items-center justify-center md:w-8/12'>
             <p>{t('about.data')}</p>
           </div>
           <div className='m-4 self-center text-nowrap md:m-6 lg:w-4/12'>
