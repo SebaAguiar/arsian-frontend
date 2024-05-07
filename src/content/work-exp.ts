@@ -9,7 +9,7 @@ export const workExpData = {
     {
       from: dateFormater('June, 2023', 'en', options),
       to: dateFormater('January, 2024', 'en', options),
-      position: 'Full Stack Developer',
+      title: 'Full Stack Developer',
       company: '14x tech',
       companyUrl: 'https://14xtech.com',
       description:
@@ -18,7 +18,7 @@ export const workExpData = {
     {
       from: dateFormater('March, 2023', 'en', options),
       to: dateFormater('June, 2023', 'en', options),
-      position: 'Backend Developer',
+      title: 'Backend Developer',
       company: 'Trabajo en Digital',
       companyUrl: 'https://www.trabajoendigital.com',
       description:
@@ -29,7 +29,7 @@ export const workExpData = {
     {
       from: dateFormater('June, 2023', 'es', options),
       to: dateFormater('January, 2024', 'es', options),
-      position: 'Full Stack Developer',
+      title: 'Full Stack Developer',
       company: '14x tech',
       companyUrl: 'https://14xtech.com',
       description:
@@ -38,7 +38,7 @@ export const workExpData = {
     {
       from: dateFormater('March, 2023', 'es', options),
       to: dateFormater('June, 2023', 'es', options),
-      position: 'Backend Developer',
+      title: 'Backend Developer',
       company: 'Trabajo en Digital',
       companyUrl: 'https://www.trabajoendigital.com',
       description:

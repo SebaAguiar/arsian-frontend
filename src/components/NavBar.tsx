@@ -61,7 +61,7 @@ const NavBar: React.FC<NavBarProps> = ({ locale, toggleSide, path }) => {
 
   return (
     <>
-      <nav className='h-full w-2/12 border-r border-side-gray bg-black'>
+      <nav className='h-full w-2/12 border-r border-side-gray bg-my-black'>
         <div className='h-60 w-full'>
           {pages.map((page, index) => (
             <>

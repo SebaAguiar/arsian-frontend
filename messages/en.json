@@ -14,6 +14,35 @@
         "title": "What I Do"
       }
     },
+    "resume": {
+      "title": "Resume",
+      "work": {
+        "title": "Working Experience"
+      },
+      "formation": {
+        "title": "Formation"
+      },
+      "skill": {
+        "title": "Tech Skills"
+      },
+      "certificate": {
+        "title": "My Certificates"
+      },
+      "otherCertificate": {
+        "title": "Other Certificates"
+      }
+    },
+    "contact": {
+      "title": "Contact",
+      "form": {
+        "label": {
+          "email": "Email",
+          "subject": "Subject",
+          "name": "Full Name",
+          "message": "Message"
+        }
+      }
+    },
     "side": {
       "work": "Backend Developer",
       "downloadButton": "Download CV"

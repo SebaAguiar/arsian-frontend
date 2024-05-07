@@ -14,6 +14,24 @@
         "title": "Que Hago"
       }
     },
+    "resume": {
+      "title": "Currículum",
+      "work": {
+        "title": "Experiencia de Trabajo"
+      },
+      "formation": {
+        "title": "Formación"
+      },
+      "skill": {
+        "title": "Habilidades Técnicas"
+      },
+      "certificate": {
+        "title": "Mis Certificados"
+      },
+      "otherCertificate": {
+        "title": "Otros Certificados"
+      }
+    },
     "side": {
       "work": "Desarrollador Backend",
       "downloadButton": "Descargar CV"

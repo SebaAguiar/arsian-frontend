@@ -7,6 +7,7 @@ import { dateFormater } from '@/utils/functions';
 import { aboutMeData } from '@/content/aboutMe';
 import WhatIDo from '../WhatIDo';
 import AboutInformation from '../AboutInformation';
+import { TLang } from '@/types';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -15,7 +16,6 @@ interface IAboutContainerProps {
   t: (lang: string) => string;
 }
 
-type TLang = 'es' | 'en';
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/

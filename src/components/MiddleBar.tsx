@@ -24,7 +24,7 @@ interface IMiddleBarProps {
 
 const MiddleBar: React.FC<IMiddleBarProps> = ({ texts }) => {
   return (
-    <div className='w-10/12 h-full bg-side-gray flex flex-col items-center justify-around border-l border-l-white'>
+    <div className='w-10/12 h-full bg-my-side-gray flex flex-col items-center justify-around border-l border-l-white'>
       <div className='size-44 md:size-48 flex justify-center items-center  max-h-52 max-w-52'>
         <Image
           width={100}
