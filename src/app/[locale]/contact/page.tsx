@@ -2,6 +2,7 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 import ContactContainer from '@/components/containers/ContactContainer';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
 /****************************************************************************************************************************************************
@@ -16,9 +17,10 @@ import React from 'react';
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 const ContactPage = () => {
+  const t = useTranslations('Portfolio');
   return (
     <>
-      <ContactContainer />
+      <ContactContainer t={t} />
     </>
   );
 };

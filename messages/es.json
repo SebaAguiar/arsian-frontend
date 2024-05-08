@@ -35,6 +35,18 @@
         "title": "Otros Certificados"
       }
     },
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Envie un Mensaje",
+      "form": {
+        "label": {
+          "email": "Correo",
+          "subject": "Motivo",
+          "name": "Nombre Completo",
+          "message": "Mensaje"
+        }
+      }
+    },
     "side": {
       "work": "Desarrollador Backend",
       "downloadButton": "Descargar CV"

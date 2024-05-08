@@ -37,6 +37,7 @@
     },
     "contact": {
       "title": "Contact",
+      "subtitle": "Send a Message",
       "form": {
         "label": {
           "email": "Email",
