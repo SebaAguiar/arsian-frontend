@@ -8,6 +8,7 @@ import { aboutMeData } from '@/content/aboutMe';
 import WhatIDo from '../WhatIDo';
 import AboutInformation from '../AboutInformation';
 import { TLang } from '@/types';
+import Header1 from '../Header1';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -41,8 +42,8 @@ const AboutContainer: React.FC<IAboutContainerProps> = ({ t }) => {
   ];
   return (
     <>
-      <main className='h-full w-full'>
-        <h1 className='ml-3 mt-3 text-4xl font-bold'>{t('about.title')}</h1>
+      <main className='h-full text-my-white w-full'>
+        <Header1>{t('about.title')}</Header1>
         <div className='flex w-full flex-col justify-center md:flex-row'>
           <div className='p-2 md:m-4 md:ml-8 flex w-full items-center justify-center md:w-8/12'>
             <p>{t('about.data')}</p>

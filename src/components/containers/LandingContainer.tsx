@@ -20,11 +20,11 @@ const LandingContainer: React.FC<ILandingContainerProps> = ({ t }) => {
   return (
     <>
       <div className='flex h-full w-full flex-col flex-wrap items-center justify-center'>
-        <h1 className='h-max text-4xl font-bold text-white md:text-6xl lg:text-7xl'>
-          Sebastian <span className='text-green'>Aguiar</span>
+        <h1 className='h-max text-4xl font-bold text-my-white md:text-6xl lg:text-7xl'>
+          Sebastian <span className='text-my-green'>Aguiar</span>
         </h1>
-        <h2 className='h-max text-2xl font-bold text-gray md:text-3xl lg:text-4xl'>
-          {t('whatIDo')}
+        <h2 className='h-max text-2xl font-bold text-my-gray md:text-3xl lg:text-4xl'>
+          {t('landing.work')}
         </h2>
       </div>
     </>

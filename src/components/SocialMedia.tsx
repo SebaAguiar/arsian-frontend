@@ -56,7 +56,7 @@ const SocialMedia = () => {
       {socialOptions.map((opt, index) => (
         <Link
           id={styles.social}
-          className='text-2xl md:text-3xl text-white duration-300'
+          className='text-2xl md:text-3xl text-my-white duration-300'
           key={index}
           href={opt.href}
         >

@@ -23,7 +23,7 @@ const OtherCertificates: React.FC<IOtherCertificatesProps> = ({
   return (
     <>
       <div className='flex w-full items-center justify-center'>
-        <div className='card card-side m-3 h-44 w-72 max-w-[800px] self-center overflow-y-auto border border-side-gray bg-my-black shadow-xl md:h-52 md:w-[600px] lg:h-max lg:w-full'>
+        <div className='card card-side m-3 h-44 w-72 max-w-[800px] self-center overflow-y-auto border border-my-side-gray bg-my-black shadow-xl md:h-52 md:w-[600px] lg:h-max lg:w-full'>
           <ul className='h-max w-full list-disc py-4 pl-8 pr-14'>
             {certificates.map((certificate: ICertificate, index: number) => (
               <li key={index} className='mr-4 w-max text-lg'>

@@ -30,7 +30,7 @@ const CertificateCard: React.FC<CertProps> = ({ certificates }) => {
         <>
           <div
             key={index}
-            className='bg-dark card card-side m-3 h-44 w-72 border border-side-gray shadow-xl lg:h-52 lg:w-96'
+            className='bg-my-dark card card-side m-3 h-44 w-72 border border-my-side-gray shadow-xl lg:h-52 lg:w-96'
           >
             <a className='flex flex-row' href={cert.image}>
               <figure className='h-full w-1/3'>

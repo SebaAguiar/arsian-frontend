@@ -33,7 +33,7 @@ const Skill: React.FC<ISkillProps> = ({ skills, key }) => {
             id={styles.skillImage}
             width={100}
             height={100}
-            className='text-dark-white m-2 h-14 w-14 lg:m-4'
+            className='text-my-white m-2 h-14 w-14 lg:m-4'
             src={s.image}
             alt={s.name}
           />

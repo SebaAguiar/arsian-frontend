@@ -24,7 +24,7 @@ const DownloadCv: React.FC<IDownloadCvProps> = ({ text }) => {
     <>
       <button
         id={styles.download}
-        className='border-2 border-white text-white w-7/12 h-9 rounded-full font-semibold duration-300'
+        className='border-2 border-my-white text-my-white w-7/12 h-12 rounded-full font-semibold duration-300'
       >
         <a
           href='/(EN)David-Sebastian-Aguiar--Backend-Developer.pdf'

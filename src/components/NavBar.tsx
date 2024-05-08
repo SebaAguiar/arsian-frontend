@@ -61,14 +61,14 @@ const NavBar: React.FC<NavBarProps> = ({ locale, toggleSide, path }) => {
 
   return (
     <>
-      <nav className='h-full w-2/12 border-r border-side-gray bg-my-black'>
+      <nav className='h-full w-2/12 text-white border-r border-side-gray bg-my-black'>
         <div className='h-60 w-full'>
           {pages.map((page, index) => (
             <>
               <a
                 key={index}
-                id={`/${locale}${path}` === page.path ? styles.navActive : ''}
-                className={`flex h-1/4 w-full items-center justify-center border-b border-b-side-gray text-4xl duration-300`}
+                id={path === page.path ? styles.navActive : ''}
+                className={`flex h-1/4 w-full items-center justify-center border-b border-b-my-side-gray text-4xl duration-300`}
                 href={page.path}
                 onClick={toggleSide}
               >

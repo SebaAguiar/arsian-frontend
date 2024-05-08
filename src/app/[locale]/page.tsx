@@ -17,7 +17,7 @@ import LandingContainer from '@/components/containers/LandingContainer';
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 const LandingPage = () => {
-  const t = useTranslations('Landing');
+  const t = useTranslations('Portfolio');
   return (
     <>
       <LandingContainer t={t} />

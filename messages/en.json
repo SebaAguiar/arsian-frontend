@@ -1,6 +1,9 @@
 {
   "Portfolio": {
     "lang": "en",
+    "landing": {
+      "work": "Backend Developer"
+    },
     "about": {
       "title": "About Me",
       "data": "I am passionate about music and, by chance, ended up studying web programming. Today, I work in application development, handling both backend and frontend aspects. I possess strong adaptability and quick learning skills. I consider myself a proactive individual, focused on teamwork, always ready to contribute value and creative solutions to the projects I engage in.",

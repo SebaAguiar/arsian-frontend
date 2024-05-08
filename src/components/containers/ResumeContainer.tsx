@@ -12,6 +12,7 @@ import { formationData } from '@/content/formation';
 import { TLang } from '@/types';
 import Skill from '../Skill';
 import { skillsData } from '@/content/skill';
+import Header1 from '../Header1';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -47,10 +48,8 @@ const ResumeContainer: React.FC<IResumeContainerProps> = ({ t }) => {
   const theRest = certificatesData.slice(4);
   return (
     <>
-      <main className='h-full w-full'>
-        <h1 className='text-dark-white ml-3 mt-3 text-4xl font-bold'>
-          {t('resume.title')}
-        </h1>
+      <main className='h-full text-my-white w-full'>
+        <Header1>{t('resume.title')}</Header1>
         <Experience
           title={t('resume.work.title')}
           lang={lang}
