@@ -22,9 +22,9 @@ interface IContactContainerProps {
 const ContactContainer: React.FC<IContactContainerProps> = ({ t }) => {
   return (
     <>
-      <main className='h-full w-full'>
+      <main className='h-full w-full overflow-hidden'>
         <Header1>{t('contact.title')}</Header1>
-        <div className='w-full flex flex-col md:flex-row lg:m-2 lg:px-2'>
+        <div className='w-full flex flex-col items-center justify-center md:flex-row lg:m-2 lg:px-2'>
           <ContactInformation />
           <MessagesContainer t={t} />
         </div>

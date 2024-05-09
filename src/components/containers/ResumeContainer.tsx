@@ -48,7 +48,7 @@ const ResumeContainer: React.FC<IResumeContainerProps> = ({ t }) => {
   const theRest = certificatesData.slice(4);
   return (
     <>
-      <main className='h-full text-my-white w-full'>
+      <main className='overflow-auto scrollbar-thin scrollbar-thumb-my-green scrollbar-track-my-side-gray h-full text-my-white w-full'>
         <Header1>{t('resume.title')}</Header1>
         <Experience
           title={t('resume.work.title')}

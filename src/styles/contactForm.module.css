@@ -1,0 +1,11 @@
+.contactInput:focus::after {
+  box-shadow: 10px 0 5px -2px #55b481;
+  transition: ease-in-out;
+  transition-duration: 600ms;
+}
+
+#sendButton:hover {
+  box-shadow: 1px 1px 20px #55b481;
+  transition: ease-in-out;
+  transition-duration: 600ms;
+}

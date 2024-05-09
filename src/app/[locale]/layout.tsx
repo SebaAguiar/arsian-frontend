@@ -34,9 +34,14 @@ const RootLayout: React.FC<RootLayoutProps> = ({
   };
   return (
     <html lang={locale}>
-      <body className='h-screen w-screen grid grid-cols-10 grid-rows-5 bg-my-black'>
+      <link
+        rel='stylesheet'
+        type='text/css'
+        href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
+      />
+      <body className='h-screen w-screen grid grid-cols-10 grid-rows-5 overflow-hidden bg-my-black'>
         <SideBar middleTexts={middleTexts} locale={locale} />
-        <article className='col-start-1 col-end-11 row-start-1 row-end-6 w-full overflow-auto overflow-x-hidden lg:col-start-4 lg:col-end-11'>
+        <article className='col-start-1 col-end-11 row-start-1 row-end-6 w-full lg:col-start-4 lg:col-end-11'>
           {children}
         </article>
       </body>

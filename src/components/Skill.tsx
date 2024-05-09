@@ -1,11 +1,9 @@
+'use client';
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
-
 import { ISkill } from '@/types';
-import Image from 'next/image';
-import React from 'react';
-import styles from '../styles/skill.module.css';
+import React, { useState } from 'react';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -21,22 +19,21 @@ interface ISkillProps {
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
-const Skill: React.FC<ISkillProps> = ({ skills, key }) => {
+const Skill: React.FC<ISkillProps> = ({ skills }) => {
+  const [hoverIndex, setHoverIndex] = useState(-1);
+
   return (
     <>
       {skills.map((s: ISkill, index) => (
         <div
           key={index}
-          className='group m-1 flex h-max w-max flex-col items-center justify-center'
+          className='group m-4 flex h-max w-max flex-col items-center justify-center'
+          onMouseEnter={() => setHoverIndex(index)}
+          onMouseLeave={() => setHoverIndex(-1)}
         >
-          <Image
-            id={styles.skillImage}
-            width={100}
-            height={100}
-            className='text-my-white m-2 h-14 w-14 lg:m-4'
-            src={s.image}
-            alt={s.name}
-          />
+          <i
+            className={`${hoverIndex === index ? s.hover : s.image} text-7xl transition-all duration-500 ease-in-out`}
+          ></i>
         </div>
       ))}
     </>

@@ -51,9 +51,14 @@ const Experience: React.FC<ExperienceProps> = ({ experience, title, lang }) => {
               )}
             </p>
             <h3 className='font-bold text-xl'>{exp.title}</h3>
-            <h4 className='font-light text-xs w-max'>
-              <a href={exp.companyUrl}>{exp.company}</a>
-            </h4>
+            <p className='font-light text-xs w-max'>
+              <a
+                className='hover:text-my-green hover:font-medium transition-all duration-500 ease-in-out'
+                href={exp.companyUrl}
+              >
+                {exp.company}
+              </a>
+            </p>
             <p className='mt-2'>{exp.description}</p>
           </li>
         ))}

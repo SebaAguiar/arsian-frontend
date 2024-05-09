@@ -11,6 +11,7 @@ export interface IMiddleTexts {
 export interface ISkill {
   name: string;
   image: string;
+  hover: string;
 }
 
 export interface IExperience {

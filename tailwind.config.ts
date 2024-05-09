@@ -48,7 +48,7 @@ const config: Config = {
   plugins: [
     // require('tailwindcss-textshadow'),
     require('flowbite/plugin'),
-    // require('tailwind-scrollbar'),
+    require('tailwind-scrollbar'),
     // require('tailwind-scrollbar-hide'),
     require('daisyui'),
   ],

@@ -38,8 +38,8 @@ const MessagesForms: React.FC<IMessagesFormsProps> = ({ lang }) => {
         </select>
       </div>
       <div className='row-start-2 row-end-7 col-start-1 col-end-7 w-full h-full border border-my-side-gray p-3'>
-        <div className='w-full h-full flex justify-center items-center'>
-          <ContactForm labels={contactData[lang]} />
+        <div className='w-full h-full flex justify-center items-center p-3'>
+          <ContactForm lang={lang} labels={contactData[lang]} />
         </div>
       </div>
     </>
