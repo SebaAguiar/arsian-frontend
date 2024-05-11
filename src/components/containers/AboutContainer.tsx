@@ -42,7 +42,7 @@ const AboutContainer: React.FC<IAboutContainerProps> = ({ t }) => {
   ];
   return (
     <>
-      <main className='h-full text-my-white w-full'>
+      <section className='h-full text-my-white w-full'>
         <Header1>{t('about.title')}</Header1>
         <div className='flex w-full flex-col justify-center md:flex-row'>
           <div className='p-2 md:m-4 md:ml-8 flex w-full items-center justify-center md:w-8/12'>
@@ -58,7 +58,7 @@ const AboutContainer: React.FC<IAboutContainerProps> = ({ t }) => {
             <WhatIDo data={aboutMeData[lang].whatIDo} />
           </div>
         </div>
-      </main>
+      </section>
     </>
   );
 };

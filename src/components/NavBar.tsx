@@ -30,7 +30,7 @@ const NavBar: React.FC<NavBarProps> = ({ locale, toggleSide, path }) => {
         es: 'Inicio',
         en: 'Home',
       },
-      path: `/${locale}/`,
+      path: `/${locale}`,
       icon: <LuHome />,
     },
     {
@@ -63,10 +63,9 @@ const NavBar: React.FC<NavBarProps> = ({ locale, toggleSide, path }) => {
     <>
       <nav className='h-full w-2/12 text-white border-r border-side-gray bg-my-black'>
         <div className='h-60 w-full'>
-          {pages.map((page, index) => (
+          {pages.map((page) => (
             <>
               <a
-                key={index}
                 id={path === page.path ? styles.navActive : ''}
                 className={`flex h-1/4 w-full items-center justify-center border-b border-b-my-side-gray text-4xl duration-300`}
                 href={page.path}

@@ -9,7 +9,7 @@ const config: Config = {
     colors: {
       my: {
         black: '#232323',
-        green: '#55B481',
+        green: '#00b89f',
         'side-gray': '#444444',
         gray: '#BBBBBB',
         white: '#FFFFFF',

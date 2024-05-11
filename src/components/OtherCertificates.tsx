@@ -27,7 +27,10 @@ const OtherCertificates: React.FC<IOtherCertificatesProps> = ({
           <ul className='h-max w-full list-disc py-4 pl-8 pr-14'>
             {certificates.map((certificate: ICertificate, index: number) => (
               <li key={index} className='mr-4 w-max text-lg'>
-                <a className='w-100' href={certificate.image}>
+                <a
+                  className='w-100 hover:text-my-green transition-all duration-500 ease-in-out'
+                  href={certificate.image}
+                >
                   {certificate.name}
                 </a>
               </li>

@@ -5,3 +5,8 @@
 body {
   background: '#232323';
 }
+
+body.swal2-shown {
+  height: auto !important;
+  overflow-y: auto !important;
+}

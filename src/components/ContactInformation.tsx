@@ -39,7 +39,7 @@ const ContactInformation = () => {
       <section className='w-full flex flex-col justify-center items-center mt-4 mb-2 md:w-1/3'>
         {options.map((option) => (
           <>
-            <div className='w-3/4 h-24 bg-dark-side-gray border border-dark-white m-2 text-dark-white text-4xl flex flex-col justify-around items-center md:w-5/6 lg:11/12'>
+            <div className='min-h-max w-3/4 h-24 bg-dark-side-gray border border-dark-white m-2 text-dark-white text-4xl flex flex-col justify-around items-center md:w-5/6 lg:11/12'>
               <div
                 className={`${option.content === 'Freelancer' ? 'text-my-green' : 'text-my-white'} `}
               >

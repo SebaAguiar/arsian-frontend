@@ -6,12 +6,12 @@ import {
   PUBLIC_EMAIL_JS_SERVICE_ID,
   PUBLIC_EMAIL_JS_TEMPLATE_ID,
 } from '@/constants';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import { swalMessages } from '@/content/swal';
 import { TLang } from '@/types';
-import styles from '../styles/contactForm.module.css';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -31,14 +31,16 @@ interface IContactFormProps {
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
-
+const MySwal = withReactContent(Swal);
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
   const form = useRef<HTMLFormElement | null>(null);
+  const [disabled, setDisabled] = useState(false);
   const sendForm = async (e: React.FormEvent) => {
     e.preventDefault();
+    setDisabled(true);
     try {
       if (form.current !== null) {
         await emailjs.sendForm(
@@ -50,16 +52,28 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
           },
         );
         Swal.fire({
-          title: 'Good Job!',
-          text: swalMessages[lang].success.text,
+          title: swalMessages[lang].success.title,
+          text: swalMessages[lang].error.text,
           icon: 'success',
+          backdrop: true,
+          heightAuto: false,
+          willOpen: () => {
+            document.body.style.overflow = 'hidden';
+          },
+          willClose: () => {
+            document.body.style.overflow = '';
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            setDisabled(false);
+          }
         });
         form.current.reset();
       }
     } catch (error) {
       console.log('ERROR at ContactForm.tsx: ', error);
       Swal.fire({
-        title: 'Oops',
+        title: swalMessages[lang].error.title,
         text: swalMessages[lang].error.text,
         icon: 'error',
       });
@@ -77,7 +91,7 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
             type='text'
             name='user_name'
             id='user_name'
-            className={`${styles.contactInput} block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer`}
+            className='block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
             placeholder=' '
             required
           />
@@ -140,9 +154,9 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
           </div>
         </div>
         <button
-          id={styles.sendButton}
-          className='h-10 w-32 rounded-full bg-dark-black border-2 border-dark-white font-semibold text-dark-white mt-4 duration-300'
+          className='border-2 border-my-white hover:border-my-green hover:text-lg text-my-white w-40 h-12 rounded-full font-semibold duration-500 relative overflow-hidden'
           type='submit'
+          disabled={disabled}
         >
           {labels.submit}
         </button>

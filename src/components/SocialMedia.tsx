@@ -55,8 +55,7 @@ const SocialMedia = () => {
     <div className='flex flex-row justify-around mt-4'>
       {socialOptions.map((opt, index) => (
         <Link
-          id={styles.social}
-          className='text-2xl md:text-3xl text-my-white duration-300'
+          className='text-2xl md:text-3xl text-my-white hover:text-my-green duration-500'
           key={index}
           href={opt.href}
         >
