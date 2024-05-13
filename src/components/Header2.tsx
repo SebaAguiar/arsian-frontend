@@ -21,7 +21,7 @@ interface IHeader2Props {
 const Header2: React.FC<IHeader2Props> = ({ children }) => {
   return (
     <>
-      <h2 className='ml-8 mt-1 text-2xl font-semibold text-my-green'>
+      <h2 className='ml-8 mt-1 text-3xl font-semibold text-my-green'>
         {children}
       </h2>
     </>

@@ -39,9 +39,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({
         type='text/css'
         href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
       />
-      <body className='w-screen h-screen grid grid-cols-10 grid-rows-5 overflow-hidden bg-my-black'>
+      <body className='w-screen text-sm md:text-lg h-screen grid grid-cols-10 grid-rows-5 overflow-hidden bg-my-black'>
         <SideBar middleTexts={middleTexts} locale={locale} />
-        <main className='col-start-1 col-end-11 row-start-1 row-end-6 w-full lg:col-start-4 lg:col-end-11'>
+        <main className='col-start-1 col-end-11 row-start-1 row-end-6 w-full h-full lg:col-start-4 lg:col-end-11'>
           {children}
         </main>
       </body>

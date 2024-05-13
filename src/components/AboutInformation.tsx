@@ -25,7 +25,7 @@ const AboutInformation: React.FC<IAboutInformationProps> = ({ data }) => {
       <ul>
         {data.map((render) => (
           <>
-            <li className='text-sm md:mb-3'>
+            <li className='md:mb-3'>
               <strong>{render.label}: </strong>
               {render.content}
             </li>

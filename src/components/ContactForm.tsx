@@ -51,7 +51,9 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
             publicKey: PUBLIC_EMAIL_JS_PUBLIC_KEY,
           },
         );
-        Swal.fire({
+        form.current.reset();
+        setDisabled(false);
+        return Swal.fire({
           title: swalMessages[lang].success.title,
           text: swalMessages[lang].error.text,
           icon: 'success',
@@ -68,10 +70,10 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
             setDisabled(false);
           }
         });
-        form.current.reset();
       }
     } catch (error) {
       console.log('ERROR at ContactForm.tsx: ', error);
+      setDisabled(false);
       Swal.fire({
         title: swalMessages[lang].error.title,
         text: swalMessages[lang].error.text,
@@ -84,20 +86,20 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
       <form
         onSubmit={sendForm}
         ref={form}
-        className='mx-auto text-my-white w-full h-full '
+        className='mx-auto text-my-white w-full min-h-80 h-full '
       >
         <div className='relative z-0 w-full mb-5 group'>
           <input
             type='text'
             name='user_name'
             id='user_name'
-            className='block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
+            className='block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
             placeholder=' '
             required
           />
           <label
             htmlFor='user_name'
-            className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+            className='peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
           >
             {labels.name}
           </label>
@@ -108,13 +110,13 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
               type='email'
               name='user_email'
               id='user_email'
-              className='block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
+              className='block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
               placeholder=' '
               required
             />
             <label
               htmlFor='user_email'
-              className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+              className='peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
             >
               {labels.email}
             </label>
@@ -124,13 +126,13 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
               type='text'
               name='user_subject'
               id='user_subject'
-              className='block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
+              className='block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
               placeholder=' '
               required
             />
             <label
               htmlFor='user_subject'
-              className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+              className='peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
             >
               {labels.subject}
             </label>
@@ -141,13 +143,13 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
             <textarea
               name='user_message'
               id='user_message'
-              className='block py-2.5 px-0 w-full max-h-[190px] text-sm bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
+              className='block py-2.5 px-0 w-full max-h-[190px] bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-my-green focus:outline-none focus:ring-0 focus:border-my-green peer'
               placeholder=' '
               required
             />
             <label
               htmlFor='user_message'
-              className='peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
+              className='peer-focus:font-medium absolute text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-my-green peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6'
             >
               {labels.message}
             </label>
