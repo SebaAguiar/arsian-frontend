@@ -2,10 +2,13 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import SideBar from '@/components/containers/SideBar';
 import { useTranslations } from 'next-intl';
+import BurgerMenu from '@/components/BurgerMenu';
+import ChangePages from '@/components/ChangePages';
+import React from 'react';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -18,7 +21,7 @@ type RootLayoutProps = {
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 /****************************************************************************************************************************************************
  * * FUNCTIONS
@@ -33,19 +36,23 @@ const RootLayout: React.FC<RootLayoutProps> = ({
     download: t('side.downloadButton'),
   };
   return (
-    <html lang={locale}>
-      <link
-        rel='stylesheet'
-        type='text/css'
-        href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
-      />
-      <body className='w-screen text-sm md:text-lg h-screen grid grid-cols-10 grid-rows-5 overflow-hidden bg-my-black'>
-        <SideBar middleTexts={middleTexts} locale={locale} />
-        <main className='col-start-1 col-end-11 row-start-1 row-end-6 w-full h-full lg:col-start-4 lg:col-end-11'>
-          {children}
-        </main>
-      </body>
-    </html>
+    <>
+      <html lang={locale}>
+        <link
+          rel='stylesheet'
+          type='text/css'
+          href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
+        />
+        <body className='w-screen text-sm md:text-lg h-screen grid grid-cols-10 grid-rows-5 overflow-hidden bg-my-black'>
+          <BurgerMenu />
+          <SideBar middleTexts={middleTexts} locale={locale} />
+          <main className='col-start-1 col-end-11 row-start-1 row-end-6 w-full h-full lg:col-start-4 lg:col-end-11'>
+            <ChangePages locale={locale} />
+            {children}
+          </main>
+        </body>
+      </html>
+    </>
   );
 };
 

@@ -10,7 +10,6 @@ import {
   FaTelegramPlane,
   FaWhatsapp,
 } from 'react-icons/fa';
-import styles from '../styles/socialMedia.module.css';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES

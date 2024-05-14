@@ -53,18 +53,12 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
         );
         form.current.reset();
         setDisabled(false);
-        return Swal.fire({
+        return MySwal.fire({
           title: swalMessages[lang].success.title,
           text: swalMessages[lang].error.text,
           icon: 'success',
           backdrop: true,
           heightAuto: false,
-          willOpen: () => {
-            document.body.style.overflow = 'hidden';
-          },
-          willClose: () => {
-            document.body.style.overflow = '';
-          },
         }).then((result) => {
           if (result.isConfirmed) {
             setDisabled(false);
@@ -74,7 +68,7 @@ const ContactForm: React.FC<IContactFormProps> = ({ lang, labels }) => {
     } catch (error) {
       console.log('ERROR at ContactForm.tsx: ', error);
       setDisabled(false);
-      Swal.fire({
+      MySwal.fire({
         title: swalMessages[lang].error.title,
         text: swalMessages[lang].error.text,
         icon: 'error',

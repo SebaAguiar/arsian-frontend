@@ -19,7 +19,7 @@
  ****************************************************************************************************************************************************/
 export const getPath = (path: string, lang: string): string => {
   const [, newPath] = path.split(`/${lang}`);
-  return !newPath.length || !newPath ? '/home' : newPath;
+  return !newPath.length || !newPath ? '/' : newPath;
 };
 
 export const dateFormater = (date: string, lang: string, options: object) => {

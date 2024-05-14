@@ -10,6 +10,7 @@ import ContactInformation from '../ContactInformation';
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 interface IContactContainerProps {
+  // eslint-disable-next-line no-unused-vars
   t: (lang: string) => string;
 }
 /****************************************************************************************************************************************************

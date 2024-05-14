@@ -2,7 +2,7 @@
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
-import React, { useState } from 'react';
+import React from 'react';
 import ContactForm from '../ContactForm';
 import { contactData } from '@/content/contactForm';
 import { TLang } from '@/types';
@@ -14,7 +14,6 @@ interface IMessagesFormsProps {
   lang: TLang;
 }
 
-type TMessageforms = 'Email' | 'Calendar' | 'Whatsapp' | 'Telegram';
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
@@ -23,7 +22,6 @@ type TMessageforms = 'Email' | 'Calendar' | 'Whatsapp' | 'Telegram';
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 const MessagesForms: React.FC<IMessagesFormsProps> = ({ lang }) => {
-  const [platform, setPlatform] = useState<TMessageforms>('Email');
   const options = ['Email', 'Calendar', 'Whatsapp', 'Telegram'];
   return (
     <>

@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "check": "next lint && tsc --noEmit",
+    "lint": "eslint --ext .astro,.ts,.js,.tsx .",
+    "lint:fix": "eslint --ext .astro,.ts,.js,.tsx . --fix",
+    "format": "prettier --write src"
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
@@ -14,6 +17,7 @@
     "bcrypt": "^5.1.1",
     "dotenv": "^16.4.5",
     "file-saver": "^2.0.5",
+    "flag-icons": "^7.2.1",
     "flowbite": "^2.3.0",
     "flowbite-react": "^0.9.0",
     "next": "14.2.1",

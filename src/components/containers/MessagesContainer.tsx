@@ -2,7 +2,6 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 import React from 'react';
-import Header2 from '../Header2';
 import { TLang } from '@/types';
 import MessagesForms from './MessagesForms';
 
@@ -10,6 +9,7 @@ import MessagesForms from './MessagesForms';
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 interface IMessagesContainerProps {
+  // eslint-disable-next-line no-unused-vars
   t: (lang: string) => string;
 }
 /****************************************************************************************************************************************************

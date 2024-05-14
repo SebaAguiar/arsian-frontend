@@ -3,9 +3,7 @@
  * * IMPORTS
  ****************************************************************************************************************************************************/
 
-import React, { useState } from 'react';
-import styles from '../styles/downloadButton.module.css';
-import { LuDownloadCloud } from 'react-icons/lu';
+import React from 'react';
 
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
@@ -21,13 +19,8 @@ interface IDownloadCvProps {
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
 const DownloadCv: React.FC<IDownloadCvProps> = ({ text }) => {
-  const [hoverIndex, setHoverIndex] = useState(false);
   return (
-    <button
-      onMouseEnter={() => setHoverIndex(true)}
-      onMouseLeave={() => setHoverIndex(false)}
-      className='border-2 border-my-white hover:border-my-green hover:text-lg text-my-white w-7/12 h-12 rounded-full font-semibold duration-500 relative overflow-hidden'
-    >
+    <button className='border-2 border-my-white hover:border-my-green hover:text-lg text-my-white w-7/12 h-12 rounded-full font-semibold duration-500 relative overflow-hidden'>
       <a
         className={`flex items-center justify-center transition-all duration-500`}
         href='/(EN)David-Sebastian-Aguiar--Backend-Developer.pdf'

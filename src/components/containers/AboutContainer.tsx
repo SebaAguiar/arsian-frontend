@@ -14,6 +14,7 @@ import Header1 from '../Header1';
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
 interface IAboutContainerProps {
+  // eslint-disable-next-line no-unused-vars
   t: (lang: string) => string;
 }
 

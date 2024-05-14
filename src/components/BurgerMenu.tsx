@@ -1,16 +1,15 @@
 'use client';
+import { useStore } from '@/zustand/store';
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
-import { ISkill } from '@/types';
-import React, { useState } from 'react';
-
+import React from 'react';
+import { LuAlignJustify, LuArrowLeft } from 'react-icons/lu';
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
-interface ISkillProps {
-  skills: ISkill[];
-  key: number;
+interface IBurgerMenuProps {
+  styles?: string;
 }
 /****************************************************************************************************************************************************
  * * DECLARATIONS
@@ -19,23 +18,22 @@ interface ISkillProps {
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
-const Skill: React.FC<ISkillProps> = ({ skills }) => {
-  const [hoverIndex, setHoverIndex] = useState(-1);
+const BurgerMenu: React.FC<IBurgerMenuProps> = ({ styles }) => {
+  const isSideActive = useStore((state) => state.isSideActive);
+  const toggleSide = useStore((state) => state.toggleSide);
   return (
     <>
-      {skills.map((s: ISkill, index) => (
-        <div
-          key={index}
-          className='group m-4 flex h-max w-max flex-col items-center justify-center'
-          onMouseEnter={() => setHoverIndex(index)}
-          onMouseLeave={() => setHoverIndex(-1)}
-        >
-          <i
-            className={`${hoverIndex === index ? s.hover : s.image} text-7xl transition-all duration-500 ease-in-out`}
-            title={s.name}
-          ></i>
-        </div>
-      ))}
+      <div
+        className={
+          styles
+            ? styles
+            : `size-11 flex items-center justify-center absolute z-40 right-3 top-3 text-xl text-my-white transition-all duration-75 ease-in-out ${isSideActive ? 'hidden' : ''} md:size-14 md:text-3xl lg:hidden active:text-my-green`
+        }
+      >
+        <button onClick={() => toggleSide()}>
+          {isSideActive ? <LuArrowLeft /> : <LuAlignJustify />}
+        </button>
+      </div>
     </>
   );
 };
@@ -43,4 +41,4 @@ const Skill: React.FC<ISkillProps> = ({ skills }) => {
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export default Skill;
+export default BurgerMenu;

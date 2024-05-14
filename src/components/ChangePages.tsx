@@ -2,40 +2,69 @@
 /****************************************************************************************************************************************************
  * * IMPORTS
  ****************************************************************************************************************************************************/
-import { ISkill } from '@/types';
-import React, { useState } from 'react';
-
+import React, { useEffect, useMemo, useState } from 'react';
+import { LuArrowUp, LuArrowDown } from 'react-icons/lu';
+import { usePathname, useRouter } from 'next/navigation';
 /****************************************************************************************************************************************************
  * * TYPES - INTERFACES - CLASES
  ****************************************************************************************************************************************************/
-interface ISkillProps {
-  skills: ISkill[];
-  key: number;
-}
+
 /****************************************************************************************************************************************************
  * * DECLARATIONS
  ****************************************************************************************************************************************************/
-
+interface IChangePagesProps {
+  locale: string;
+}
 /****************************************************************************************************************************************************
  * * FUNCTIONS
  ****************************************************************************************************************************************************/
-const Skill: React.FC<ISkillProps> = ({ skills }) => {
-  const [hoverIndex, setHoverIndex] = useState(-1);
+const ChangePages: React.FC<IChangePagesProps> = ({ locale }) => {
+  const pages = useMemo(
+    () => [
+      `/${locale}`,
+      `/${locale}/about`,
+      `/${locale}/resume`,
+      `/${locale}/contact`,
+    ],
+    [locale],
+  );
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const [currentIndex, setCurrentIndex] = useState(pages.indexOf(pathname));
+
+  useEffect(() => {
+    setCurrentIndex(pages.indexOf(pathname));
+  }, [pathname, pages]);
+
+  const handleClicks = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    const value = e.currentTarget.getAttribute('value');
+
+    if (value === 'up' && currentIndex > 0) {
+      router.push(pages[currentIndex - 1]);
+    } else if (value === 'down' && currentIndex < pages.length - 1) {
+      router.push(pages[currentIndex + 1]);
+    }
+  };
+
   return (
     <>
-      {skills.map((s: ISkill, index) => (
-        <div
-          key={index}
-          className='group m-4 flex h-max w-max flex-col items-center justify-center'
-          onMouseEnter={() => setHoverIndex(index)}
-          onMouseLeave={() => setHoverIndex(-1)}
+      <div className='absolute z-30 right-5 bottom-5 flex flex-col text-2xl text-my-white lg:hidden'>
+        <button
+          value='up'
+          className='p-2 active:text-my-green'
+          onClick={handleClicks}
         >
-          <i
-            className={`${hoverIndex === index ? s.hover : s.image} text-7xl transition-all duration-500 ease-in-out`}
-            title={s.name}
-          ></i>
-        </div>
-      ))}
+          <LuArrowUp />
+        </button>
+        <button
+          value='down'
+          className='p-2 active:text-my-green'
+          onClick={handleClicks}
+        >
+          <LuArrowDown />
+        </button>
+      </div>
     </>
   );
 };
@@ -43,4 +72,4 @@ const Skill: React.FC<ISkillProps> = ({ skills }) => {
 /****************************************************************************************************************************************************
  * * EXPORTS
  ****************************************************************************************************************************************************/
-export default Skill;
+export default ChangePages;
