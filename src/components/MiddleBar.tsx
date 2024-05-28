@@ -27,9 +27,9 @@ const MiddleBar: React.FC<IMiddleBarProps> = ({ texts }) => {
     <div className='w-10/12 h-full bg-my-side-gray flex flex-col items-center justify-around border-l border-l-white'>
       <div className='size-44 md:size-48 lg:size-64 flex justify-center items-center'>
         <Image
-          width={100}
-          height={100}
-          src='/yo-pic.png'
+          width={500}
+          height={500}
+          src='https://res.cloudinary.com/dvuqyaegw/image/upload/f_auto,q_auto/yo-pic_qbfrnu'
           className='border size-44 md:size-48 lg:size-60 border-white rounded-full'
           alt='Seba Image'
         />
