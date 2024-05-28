@@ -25,20 +25,20 @@ interface IMiddleBarProps {
 const MiddleBar: React.FC<IMiddleBarProps> = ({ texts }) => {
   return (
     <div className='w-10/12 h-full bg-my-side-gray flex flex-col items-center justify-around border-l border-l-white'>
-      <div className='size-44 md:size-48 flex justify-center items-center  max-h-52 max-w-52'>
+      <div className='size-44 md:size-48 lg:size-64 flex justify-center items-center'>
         <Image
           width={100}
           height={100}
           src='/yo-pic.png'
-          className='border size-44 md:size-48 border-white rounded-full'
+          className='border size-44 md:size-48 lg:size-60 border-white rounded-full'
           alt='Seba Image'
         />
       </div>
       <div className='flex flex-col justify-center items-center flex-wrap max-h-40'>
-        <h1 className='font-bold text-3xl text-center text-white'>
+        <h1 className='font-bold text-3xl lg:text-4xl text-center text-white'>
           Sebastian Aguiar
         </h1>
-        <h2 className='font-semibold text-lg text-center text-gray'>
+        <h2 className='font-semibold text-lg lg:text-xl text-center text-gray'>
           {texts.work}
         </h2>
         <div className='w-10/12 md:w-full'>
