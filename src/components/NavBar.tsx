@@ -84,18 +84,16 @@ const NavBar: React.FC<NavBarProps> = ({ toggleSide }) => {
           </Link>
 
           {pages.map((page, index) => (
-            <>
-              <Link
-                key={index}
-                id={path2 === page.path ? styles.navActive : ''}
-                className={`flex h-1/5 w-full items-center justify-center border-b border-b-my-side-gray text-4xl duration-300`}
-                href={page.path as keyof typeof pathnames}
-                onClick={toggleSide}
-                title={page.name[locale as keyof typeof page.name]}
-              >
-                {page.icon}
-              </Link>
-            </>
+            <Link
+              key={index}
+              id={path2 === page.path ? styles.navActive : ''}
+              className={`flex h-1/5 w-full items-center justify-center border-b border-b-my-side-gray text-4xl duration-300 transition-all ease-in-out hover:text-my-green`}
+              href={page.path as keyof typeof pathnames}
+              onClick={toggleSide}
+              title={page.name[locale as keyof typeof page.name]}
+            >
+              {page.icon}
+            </Link>
           ))}
         </div>
       </nav>

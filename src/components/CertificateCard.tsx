@@ -31,7 +31,12 @@ const CertificateCard: React.FC<CertProps> = ({ certificates }) => {
             key={index}
             className='bg-my-dark card card-side m-3 h-44 w-72 border border-my-side-gray hover:border-my-green shadow-xl lg:h-52 lg:w-96 transition-all duration-500 ease-in-out'
           >
-            <a className='flex flex-row' href={cert.image}>
+            <a
+              className='flex flex-row'
+              href={cert.image}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
               <figure className='h-full w-1/3'>
                 <Image
                   width={100}

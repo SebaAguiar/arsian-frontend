@@ -49,7 +49,7 @@ const ChangePages: React.FC<IChangePagesProps> = ({ locale }) => {
 
   return (
     <>
-      <div className='absolute z-30 right-5 bottom-5 flex flex-col text-2xl text-my-white lg:hidden'>
+      <div className='absolute z-20 right-5 bottom-5 flex flex-col text-2xl text-my-white lg:hidden'>
         <button
           value='up'
           className='p-2 active:text-my-green'

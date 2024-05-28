@@ -38,11 +38,13 @@ const RootLayout: React.FC<RootLayoutProps> = ({
   return (
     <>
       <html lang={locale}>
-        <link
-          rel='stylesheet'
-          type='text/css'
-          href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
-        />
+        <head>
+          <link
+            rel='stylesheet'
+            type='text/css'
+            href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
+          />
+        </head>
         <body className='w-screen text-sm md:text-lg h-screen grid grid-cols-10 grid-rows-5 overflow-hidden bg-my-black'>
           <BurgerMenu />
           <SideBar middleTexts={middleTexts} locale={locale} />
